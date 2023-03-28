@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+/* 
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif; */
+:root {
+  --open-sans: 'Open Sans', sans-serif;
+  --raleway: 'Raleway', sans-serif;
+  --green-light: hsl(176, 68%, 64%);
+  --green-dark: hsl(198, 60%, 50%);
+  --white: hsl(0, 0%, 100%);
+}
+/* Josh Comeau custom css reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  /* border: 1px solid red; */
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  min-height: 100vh;
+  font-family: var(--open-sans);
+  font-size: 0.875rem;
+  color: var(--white);
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+main {
+  width: min(1440px, 100%);
+  margin: auto;
+
+  background-color: hsl(218, 28%, 13%);
+
+  border: 1px solid black;
+}
+header {
+  background-color: hsl(217, 28%, 15%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+}
+header nav ul {
+  display: flex;
+  gap: 4rem;
+  list-style-type: none;
+}
+header nav ul li {
+  font-family: var(--raleway);
+  font-size: 1rem;
+  cursor: pointer;
+  color: hsla(0, 0%, 100%, 0.5);
+}
+header nav ul li:hover {
+  color: hsl(0, 0%, 100%);
+  text-decoration: underline;
+}
+
+h1 {
+  font-family: var(--raleway);
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+footer {
+  background-color: hsl(216, 53%, 9%);
+  padding: 15rem 4rem 5rem;
+}
+footer img {
+  margin-bottom: 1.5rem;
+}
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+input {
+  flex-grow: 1;
+  border-radius: 2rem;
+  border: 3px solid transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  padding-left: 3rem;
+  font-size: 1rem;
+}
+
+::-moz-placeholder {
+  margin-left: 2rem;
+  color: lightgrey;
+}
+input:focus {
+  border: 3px solid var(--green-dark);
+}
+.section-wrap {
+  position: relative;
+  margin-bottom: 20rem;
+}
+
+.hero {
+  background: url('images/bg-curvy-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: hsl(217, 28%, 15%);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 2rem;
+  padding-bottom: 15rem;
+}
+
+.hero p {
+  width: 600px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.btn {
+  border: none;
+  background: linear-gradient(90deg, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+  padding: 1.2rem 6rem;
+  border-radius: 2rem;
+  font-family: var(--raleway);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: all 1s;
+}
+.hero button:hover {
+  background: hsl(176, 68%, 64%);
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 6rem;
+  gap: 5rem;
+  place-items: center;
+  margin-bottom: 10rem;
+}
+
+.service-icon {
+  text-align: center;
+  width: 300px;
+}
+
+.service-icon img {
+  margin: auto;
+}
+
+.productive {
+  display: flex;
+  gap: 3rem;
+  padding: 4rem;
+  margin-bottom: 3rem;
+}
+
+.productive h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.productive-content {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 4rem;
+}
+.productive-content p {
+  margin-bottom: 2rem;
+}
+.link-works {
+  display: flex;
+}
+
+.link-works a {
+  color: var(--green-light);
+  text-decoration: none;
+  border-bottom: 1px solid var(--green-light);
+}
+.link-works img {
+  border-bottom: 1px solid var(--green-light);
+  padding-left: 0.5rem;
+}
+
+.link-works a:hover {
+  color: hsl(0, 0%, 100%);
+  border-bottom: 1px solid hsl(0, 0%, 100%);
+}
+
+.link-works a:hover + img {
+  border-bottom: 1px solid hsl(0, 0%, 100%);
+  filter: brightness(0) invert(1);
+}
+
+.testimonial {
+  display: flex;
+  padding: 2em 7rem;
+  gap: 3rem;
+  position: relative;
+}
+.quotes {
+  width: 55px;
+  height: 45px;
+  position: absolute;
+  left: 90px;
+  top: -10px;
+  z-index: 1;
+}
+.testimonail-card {
+  background-color: hsl(219, 30%, 18%);
+  padding: 3rem 1.5rem;
+  border-radius: 0.5rem;
+  z-index: 2;
+}
+.testimonail-card > p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.user-info {
+  display: flex;
+}
+
+.user-info img {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.name {
+  font-weight: 600;
+}
+.job {
+  font-size: 0.7rem;
+  color: lightgray;
+}
+.form {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  background: hsl(217, 28%, 15%);
+  padding: 3rem 4rem;
+  position: absolute;
+  left: calc(50% - 430px);
+  bottom: -400px;
+}
+
+.form h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form p {
+  font-size: 1rem;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+.form button {
+  border: none;
+  background: linear-gradient(90deg, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+  padding: 1.2rem 3rem;
+  border-radius: 2rem;
+  font-family: var(--raleway);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+}
+.form button:hover {
+  background: hsl(176, 68%, 64%);
+}
+.error-message {
+  margin-bottom: 0 !important;
+  text-align: start !important;
+  margin: 0.5em 0 0 3em !important;
+  color: hsl(0, 100%, 63%);
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: auto;
+}
+
+.footer-nav {
+  display: flex;
+  font-size: 1rem;
+  line-height: 3;
+}
+
+.footer-nav ul {
+  list-style: none;
+}
+.footer-nav li {
+  cursor: pointer;
+}
+
+.location {
+  display: flex;
+  font-size: 1rem;
+  width: 400px;
+}
+.location img {
+  width: 1em;
+  height: 1em;
+  margin-right: 1em;
+}
+.social-icon {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+}
+.icon-circle {
+  border: 1px solid hsl(0, 0%, 100%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon-circle:hover {
+  border: 1px solid var(--green-light);
+}
+.icon-circle:hover i {
+  color: var(--green-light);
+}
+.phone,
+.email {
+  display: flex;
+  gap: 2em;
+  font-size: 1rem;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 2rem;
+}
+.attribution a {
+  color: var(--green-light);
+}
+
+/* animation classes */
+
+.hide {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.show-error-message {
+  opacity: 1;
+}
+
+.red-border {
+  border: 3px solid hsl(0, 100%, 63%);
+}
+
+/* mobile version */
+
+@media (max-width: 848px) {
+  header {
+    padding: 2rem;
+  }
+  header img {
+    width: 100px;
+  }
+  header nav ul {
+    gap: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  form {
+    flex-direction: column;
+  }
+  input {
+    padding: 1rem;
+  }
+  footer {
+    padding: 15rem 2rem 3rem;
+  }
+  .hero {
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
+  .hero p {
+    width: 100%;
+    font-size: 1rem;
+  }
+  .services {
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .productive {
+    flex-direction: column;
+    padding: 1rem 2rem;
+  }
+  .productive h2 {
+    font-size: 1.3rem;
+  }
+  .productive-content {
+    padding: 0;
+  }
+  .testimonial {
+    flex-direction: column;
+    padding: 4rem 2rem;
+  }
+  .testimonail-card {
+    padding: 1.5rem;
+  }
+  .quotes {
+    width: 35px;
+    height: auto;
+    left: 40px;
+    top: 35px;
+  }
+  .form {
+    width: 95%;
+    left: calc(50% - 175px);
+    bottom: -400px;
+    padding: 1rem 1rem;
+  }
+  .form p {
+    width: 100%;
+  }
+  .footer-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .location {
+    width: 100%;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .social-icon {
+    margin: auto;
+    gap: 1rem;
+  }
+  .error-message {
+    width: 300px !important;
+  }
+}
