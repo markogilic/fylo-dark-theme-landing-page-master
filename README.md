@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 - [Solution on Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-fylo-dark-theme-landing-page-master-NsaKwh-fM0)
-- [Live Page](https://markogilic.github.io/interactive-card-details-form-main/)
+- [Live Page](https://markogilic.github.io/fylo-dark-theme-landing-page-master/)
 
 ## Author
 
